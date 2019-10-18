@@ -11,7 +11,7 @@ services:
             - './services/users:/usr/src/app'
 
         ports:
-            - 5001:5000
+            - 5000:5000
 
         environment:
 
@@ -36,6 +36,26 @@ services:
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=postgres
 
+
+    client:
+        build:
+            context: ./services/client
+            dockerfile: Dockerfile-dev
+        volumes:
+            - './services/client:/usr/src/app'
+            - '/usr/src/app/node_modules'
+        ports:
+            - 3007:3000
+        env_file: 
+            - .env
+        environment:
+            - NODE_ENV=development
+            - REACT_APP_USERS_SERVICE_URL=${REACT_APP_USERS_SERVICE_URL} 
+
+        depends_on:
+            - users
+
+
     nginx:
         build:
             context: ./services/nginx
@@ -44,7 +64,11 @@ services:
         ports:
             - 90:80
         depends_on:
-            - users        
+            - users
+            - client
+    
+
+
 
 
        

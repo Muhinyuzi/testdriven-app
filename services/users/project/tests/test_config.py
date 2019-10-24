@@ -21,6 +21,7 @@ class TestDevelopmentConfig(TestCase):
             app.config["SQLALCHEMY_DATABASE_URI"] == os.environ.get("DATABASE_URL")
         )
         self.assertTrue(app.config["DEBUG_TB_ENABLED"])
+        self.assertTrue(app.config['BCRYPT_LOG_ROUNDS'] == 4)
 
 
 class TestTestingConfig(TestCase):
@@ -36,6 +37,7 @@ class TestTestingConfig(TestCase):
             app.config["SQLALCHEMY_DATABASE_URI"] == os.environ.get("DATABASE_TEST_URL")
         )
         self.assertFalse(app.config["DEBUG_TB_ENABLED"])
+        self.assertTrue(app.config['BCRYPT_LOG_ROUNDS'] == 4)
 
 
 class TestProductionConfig(TestCase):

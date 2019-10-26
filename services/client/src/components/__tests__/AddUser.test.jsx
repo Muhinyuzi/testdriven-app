@@ -11,7 +11,7 @@ test('AddUser renders properly', () => {
   expect(element.find('input').get(0).props.name).toBe('username');
   expect(element.find('input').get(1).props.name).toBe('email');
   expect(element.find('input').get(2).props.type).toBe('submit');
-})
+});
 
 test('AddUser renders a snapshot properly', () => {
   const tree = renderer.create(<AddUser/>).toJSON();

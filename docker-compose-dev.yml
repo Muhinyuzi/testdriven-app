@@ -62,7 +62,7 @@ services:
             dockerfile: Dockerfile-dev
         restart: always
         ports:
-            - 70:80
+            - 80:80
         depends_on:
             - users
             - client

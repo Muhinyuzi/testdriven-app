@@ -18,6 +18,13 @@ docker-compose -f docker-compose-dev.yml run client npm test -- --coverage
 inspect $? client
 docker-compose -f docker-compose-dev.yml down
 
+# run e2e tests
+docker-compose -f docker-compose-dev.yml up -d --build
+docker-compose -f docker-compose-dev.yml run users python manage.py recreate-db
+./node_modules/.bin/cypress run --config baseUrl=http://localhost:3007
+inspect $? e2e
+docker-compose -f docker-compose-dev.yml down
+
 # return proper code
 if [ -n "${fails}" ]; then
   echo "Tests failed: ${fails}"

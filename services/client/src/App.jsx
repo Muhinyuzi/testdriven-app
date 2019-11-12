@@ -30,6 +30,11 @@ class App extends Component {
     this.handleUserFormSubmit = this.handleUserFormSubmit.bind(this);
     this.logoutUser = this.logoutUser.bind(this);
   };
+  componentWillMount() {
+    if (window.localStorage.getItem('authToken')) {
+      this.setState({ isAuthenticated: true });
+    };
+  };
   componentDidMount() {
     this.getUsers();
   };

@@ -35,9 +35,11 @@ exports[`When not authenticated Login Form renders a snapshot properly 1`] = `
       <input
         className="input is-medium"
         name="email"
+        onChange={[Function]}
         placeholder="Enter an email address"
         required={true}
         type="email"
+        value=""
       />
     </div>
     <div
@@ -46,9 +48,11 @@ exports[`When not authenticated Login Form renders a snapshot properly 1`] = `
       <input
         className="input is-medium"
         name="password"
+        onChange={[Function]}
         placeholder="Enter a password"
         required={true}
         type="password"
+        value=""
       />
     </div>
     <input
@@ -106,9 +110,11 @@ exports[`When not authenticated Register Form renders a snapshot properly 1`] = 
       <input
         className="input is-medium"
         name="username"
+        onChange={[Function]}
         placeholder="Enter a username"
         required={true}
         type="text"
+        value=""
       />
     </div>
     <div
@@ -117,9 +123,11 @@ exports[`When not authenticated Register Form renders a snapshot properly 1`] = 
       <input
         className="input is-medium"
         name="email"
+        onChange={[Function]}
         placeholder="Enter an email address"
         required={true}
         type="email"
+        value=""
       />
     </div>
     <div
@@ -128,9 +136,11 @@ exports[`When not authenticated Register Form renders a snapshot properly 1`] = 
       <input
         className="input is-medium"
         name="password"
+        onChange={[Function]}
         placeholder="Enter a password"
         required={true}
         type="password"
+        value=""
       />
     </div>
     <input

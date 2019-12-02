@@ -57,7 +57,7 @@ describe('When not authenticated', () => {
       wrapper.find('form').simulate('submit', el.formData)
       expect(wrapper.instance().handleUserFormSubmit).toHaveBeenCalledWith(el.formData);
       expect(wrapper.instance().handleUserFormSubmit).toHaveBeenCalledTimes(1);
-      expect(wrapper.instance().validateForm).toHaveBeenCalledTimes(0);
+      expect(wrapper.instance().validateForm).toHaveBeenCalledTimes(1);
     });
     it(`${el.formType} Form renders a snapshot properly`, () => {
       const tree = renderer.create(component).toJSON();

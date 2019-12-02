@@ -147,8 +147,8 @@ class Form extends Component {
                 type="text"
                 placeholder="Enter a username"
                 required
-                value={this.props.username}
-                onChange={this.props.handleFormChange}
+                value={this.state.formData.username}
+                onChange={this.handleFormChange}
               />
             </div>
           }
@@ -159,8 +159,8 @@ class Form extends Component {
               type="email"
               placeholder="Enter an email address"
               required
-              value={this.props.email}
-              onChange={this.props.handleFormChange}
+              value={this.state.formData.email}
+              onChange={this.handleFormChange}
             />
           </div>
           <div className="field">
@@ -170,8 +170,8 @@ class Form extends Component {
               type="password"
               placeholder="Enter a password"
               required
-              value={this.props.password}
-              onChange={this.props.handleFormChange}
+              value={this.state.formData.password}
+              onChange={this.handleFormChange}
             />
           </div>
           <input
